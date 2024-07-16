@@ -3,10 +3,12 @@ return {
     config = function()
         require('lspsaga').setup({
             lightbulb = {
-                enable = true,
+                enable = false,
             },
             border = {
-
+            },
+            diagnostic = {
+                jump_num_shortcut = true,
             }
         })
     end,
