@@ -65,7 +65,9 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "eslint",
-                "jdtls"
+                "jdtls",
+                "typescript-language-server",
+                "clangd"
             },
             automatic_installation = true,
         })
