@@ -22,13 +22,13 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
+vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>")
 
 -- lspsaga
-vim.keymap.set("n", "<leader>ic", "<cmd>:Lspsaga incoming_calls<cr>")
+vim.keymap.set("n", "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>")
 vim.keymap.set("n", "<leader>ca", "<cmd>:Lspsaga code_action<cr>")
-vim.keymap.set("n", "<leader>gd", "<cmd>:Lspsaga goto_definition<cr>")
-vim.keymap.set("n", "<leader>pd", "<cmd>:Lspsaga peek_type_definition<cr>")
+vim.keymap.set("n", "<leader>cd", "<cmd>:Lspsaga goto_definition<cr>")
+vim.keymap.set("n", "<leader>ct", "<cmd>:Lspsaga peek_type_definition<cr>")
 vim.keymap.set("n", "H", "<cmd>:Lspsaga hover_doc<cr>")
 vim.keymap.set("n", "K", "<cmd>:Lspsaga diagnostic_jump_next<cr>")
 vim.keymap.set("n", "M", "<cmd>:Maven<cr>")
@@ -80,4 +80,3 @@ vim.keymap.set("n", "<leader>ds", "<cmd>:DapTerminate<cr>", opts)
 
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-
