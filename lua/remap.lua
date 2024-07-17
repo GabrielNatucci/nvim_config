@@ -73,7 +73,6 @@ vim.keymap.set("n", "<leader>js", "<cmd>:JavaRunnerStopMain<cr>")
 vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').continue()<cr>")
 vim.keymap.set("n", "<f1>", "<cmd>:lua require('dap').step_into()<cr>")
 vim.keymap.set("n", "<f2>", "<cmd>:lua require('dap').step_over()<cr>")
--- vim.keymap.set("n", "<f4>", "<cmd>:lua require('dap').toggle_breakpoint()<cr>")
 vim.keymap.set("n", "<f4>", "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>")
 vim.keymap.set("n", "<f8>", "<cmd>:lua require('dapui').toggle()<cr>")
 vim.keymap.set("n", "<leader>dc", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", opts)
@@ -81,5 +80,4 @@ vim.keymap.set("n", "<leader>ds", "<cmd>:DapTerminate<cr>", opts)
 
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
