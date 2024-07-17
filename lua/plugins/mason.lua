@@ -4,6 +4,8 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
+        "mfussenegger/nvim-dap",
+        "rcarriga/cmp-dap"
     },
 
     config = function()
@@ -23,7 +25,39 @@ return {
             -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         end
 
-        java.setup()
+        java.setup({
+            root_markers = {
+                'settings.gradle',
+                'settings.gradle.kts',
+                'pom.xml',
+                'build.gradle',
+                'mvnw',
+                'gradlew',
+                'build.gradle',
+                'build.gradle.kts',
+                '.git',
+            },
+            java_test = {
+                enable = true,
+            },
+            java_debug_adapter = {
+                enable = true,
+            },
+            spring_boot_tools = {
+                enable = true,
+            },
+            jdk = {
+                auto_install = true,
+            },
+            notifications = {
+                dap = true,
+            },
+            verification = {
+                invalid_order = true,
+                duplicate_setup_calls = true,
+                invalid_mason_registry = true,
+            },
+        })
 
         mason.setup()
         mason_lspconfig.setup({
