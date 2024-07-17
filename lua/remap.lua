@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent = true }
+
 vim.g.mapleader = " "
 
 -- explorador de arquivos
@@ -45,6 +47,7 @@ vim.keymap.set("n", "<C-t>", "<cmd>lua require'telescope.builtin'.grep_string()<
 
 -- para substituir todas as ocorrências de uma palavra
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- para tornar um arquivo executável
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -70,10 +73,12 @@ vim.keymap.set("n", "<leader>js", "<cmd>:JavaRunnerStopMain<cr>")
 vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').continue()<cr>")
 vim.keymap.set("n", "<f1>", "<cmd>:lua require('dap').step_into()<cr>")
 vim.keymap.set("n", "<f2>", "<cmd>:lua require('dap').step_over()<cr>")
-vim.keymap.set("n", "<f4>", "<cmd>:lua require('dap').toggle_breakpoint()<cr>")
+-- vim.keymap.set("n", "<f4>", "<cmd>:lua require('dap').toggle_breakpoint()<cr>")
+vim.keymap.set("n", "<f4>", "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>")
 vim.keymap.set("n", "<f8>", "<cmd>:lua require('dapui').toggle()<cr>")
-
+vim.keymap.set("n", "<leader>cb", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", opts)
 
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+

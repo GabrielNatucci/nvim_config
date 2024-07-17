@@ -33,3 +33,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.cmdheight = 0
+
+vim.fn.sign_define('DapBreakpoint', {text='•', texthl='red', linehl='', numhl=''})
+vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg=0, fg='#61afef', bg='#31353f' })
