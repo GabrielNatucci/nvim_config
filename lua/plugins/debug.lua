@@ -7,13 +7,13 @@ return {
         "nvim-neotest/nvim-nio",
     },
 
-    config = function ()
+    config = function()
         local dap = require("dap")
-        local dapui = require("dapui")
 
         local dapui = require("dapui")
 
-        vim.fn.sign_define('DapBreakPoint', {text='✔ ', texthl='DapBreakPoint', linehl='DapBreakPoint', numhl='DapBreakPoint'})
+        vim.fn.sign_define('DapBreakPoint',
+            { text = '✔ ', texthl = 'DapBreakPoint', linehl = 'DapBreakPoint', numhl = 'DapBreakPoint' })
 
         dap.listeners.before.attach.dapui_config = function()
             dapui.open()
@@ -31,24 +31,23 @@ return {
             dapui.close()
         end
 
-        -- dap.setup()
         dapui.setup()
 
         dap.adapters.java = function(callback)
             callback({
-                type = "server";
-                host = "127.0.0.1";
-                port = port;
+                type = "server",
+                host = "127.0.0.1",
+                port = port,
             })
         end
 
         dap.configurations.java = {
             {
-                type = 'java';
-                request = 'attach';
-                name = "Debug (Attach) - Remote";
-                hostName = "127.0.0.1";
-                port = 5005;
+                type = 'java',
+                request = 'attach',
+                name = "Debug (Attach) - Remote",
+                hostName = "127.0.0.1",
+                port = 5005,
             },
         }
 
@@ -72,4 +71,3 @@ return {
         }
     end
 }
-
