@@ -66,7 +66,7 @@ return {
                 "rust_analyzer",
                 "eslint",
                 "jdtls",
-                -- "typescript-language-server",
+                "tsserver",
                 "clangd"
             },
             automatic_installation = true,

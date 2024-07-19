@@ -11,9 +11,13 @@ return { -- This plugin
         opts = {
             task_list = {
                 direction = "bottom",
-                min_height = 25,
-                max_height = 25,
+                min_height = 30,
+                max_height = 30,
                 default_detail = 1
             },
         },
+
+        config = function ()
+            require("overseer").setup()
+        end
     }

@@ -80,3 +80,4 @@ vim.keymap.set("n", "<leader>ds", "<cmd>:DapTerminate<cr>", opts)
 
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerStop<cr>", { noremap = true, silent = true })
