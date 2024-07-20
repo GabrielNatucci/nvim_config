@@ -53,10 +53,12 @@ return {
 
                 { "<leader>c", desc = "Codelens" },
                 { "<leader>ca", desc = "Code Actions" },
+                { "<leader>cr", desc = "Rename" },
+
                 { "<leader>d", desc = "Debug" },
                 { "<leader>dc", desc = "Clear all breakpoints" },
                 { "<leader>ds", desc = "Debug stop" },
-                { "<leader>ds", desc = "Debug stop" },
+                { "<leader>dr", desc = "Reset dapui interface" },
 
                 { "<leader>h", desc = "Harpoon" },
                 { "<leader>ha", desc = "Harpoon add file" },
