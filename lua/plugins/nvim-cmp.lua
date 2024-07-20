@@ -15,6 +15,7 @@ local M = {
 M.config = function()
     local cmp = require("cmp")
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
+    cmp.mapping.abort()
 
     cmp.setup({
         snippet = {
@@ -29,6 +30,9 @@ M.config = function()
         mapping = cmp.mapping.preset.insert({
             ["<C-Space>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
+            -- ["<tab>"] = cmp.mapping.continue(), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            ['<Tab>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+            ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
             ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
