@@ -53,7 +53,10 @@ return {
 
                 { "<leader>c", desc = "Codelens" },
                 { "<leader>ca", desc = "Code Actions" },
+                { "<leader>ci", desc = "Incoming calls" },
+                { "<leader>cd", desc = "Go to definition" },
                 { "<leader>cr", desc = "Rename" },
+                { "<leader>ct", desc = "Peak Definition" },
 
                 { "<leader>d", desc = "Debug" },
                 { "<leader>dc", desc = "Clear all breakpoints" },
@@ -66,7 +69,7 @@ return {
 
                 { "<leader>j", desc = "Java"},
                 { "<larder>jr", desc = "Java Run" },
-                { "<leader>jr", desc = "Java Stop" },
+                { "<leader>js", desc = "Java Stop" },
 
                 { "<leader>p", desc = "Netrw" },
                 { "<leader>pv", desc = "Netrw" },
