@@ -77,6 +77,7 @@ vim.keymap.set("n", "<f4>", "<cmd>lua require('persistent-breakpoints.api').togg
 vim.keymap.set("n", "<f8>", "<cmd>:lua require('dapui').toggle()<cr>")
 vim.keymap.set("n", "<leader>dc", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", opts)
 vim.keymap.set("n", "<leader>ds", "<cmd>:DapTerminate<cr>", opts)
+vim.keymap.set("n", "<leader>dr", "<cmd>:lua require('dapui').open({reset = true})<cr>", opts)
 
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
