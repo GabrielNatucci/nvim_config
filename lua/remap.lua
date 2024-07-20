@@ -42,9 +42,9 @@ vim.keymap.set("n", "<leader>hq", "<cmd>lua require('harpoon.ui').toggle_quick_m
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 -- telescope
-vim.keymap.set("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<cr>")
-vim.keymap.set("n", "<C-g>", "<cmd>lua require'telescope.builtin'.live_grep()<cr>")
-vim.keymap.set("n", "<C-t>", "<cmd>lua require'telescope.builtin'.grep_string()<cr>")
+vim.keymap.set("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
+vim.keymap.set("n", "<C-g>", "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
+vim.keymap.set("n", "<C-t>", "<cmd>lua require('telescope.builtin').grep_string({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
 
 -- para substituir todas as ocorrências de uma palavra
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
