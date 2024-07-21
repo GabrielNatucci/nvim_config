@@ -67,7 +67,8 @@ return {
                 "eslint",
                 "jdtls",
                 "tsserver",
-                "clangd"
+                "clangd",
+                "firefox-debug-adapter"
             },
             automatic_installation = true,
         })
