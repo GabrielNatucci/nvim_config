@@ -73,7 +73,7 @@ return {
         dap.adapters.firefox = {
             type = 'executable',
             command = 'node',
-            args = { os.getenv('HOME') .. '/projetos/vscode-firefox-debug/dist/adapter.bundle.js' },
+            args = { os.getenv('HOME') .. '/dev_utils/vscode-firefox-debug/dist/adapter.bundle.js' },
         }
 
         dap.configurations.typescript = {

@@ -68,7 +68,6 @@ return {
                 "jdtls",
                 "tsserver",
                 "clangd",
-                "firefox-debug-adapter"
             },
             automatic_installation = true,
         })

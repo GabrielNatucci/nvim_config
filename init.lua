@@ -1,5 +1,6 @@
 require("config.lazy")
 require("remap")
+require("utils.firefox-debug-adapter")
 
 vim.cmd.colorscheme('tokyonight-moon')
 
