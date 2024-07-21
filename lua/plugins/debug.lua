@@ -78,7 +78,7 @@ return {
 
         dap.configurations.typescript = {
             {
-                name = 'Debug with Firefox',
+                name = 'Debug front-end Firefox',
                 type = 'firefox',
                 request = 'launch',
                 reAttach = true,
@@ -90,7 +90,7 @@ return {
 
         dap.configurations.javascript = {
             {
-                name = 'Debug with Firefox',
+                name = 'Debug front-end Firefox',
                 type = 'firefox',
                 request = 'launch',
                 reAttach = true,
