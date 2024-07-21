@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr>")
 -- salvar e sair
 vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
 vim.keymap.set("n", "<c-s>", "<cmd>w!<cr>")
-vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>")
+-- vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>")
 
 -- para mover linhas para cima e para baixo
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -72,8 +72,8 @@ vim.keymap.set("n", "<leader>js", "<cmd>:JavaRunnerStopMain<cr>")
 
 -- DEBUG
 vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').continue()<cr>")
-vim.keymap.set("n", "<f1>", "<cmd>:lua require('dap').step_into()<cr>")
-vim.keymap.set("n", "<f2>", "<cmd>:lua require('dap').step_over()<cr>")
+vim.keymap.set("n", "<f1>", "<cmd>:lua require('dap').step_into()<cr>zz")
+vim.keymap.set("n", "<f2>", "<cmd>:lua require('dap').step_over()<cr>zz")
 vim.keymap.set("n", "<f4>", "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>")
 vim.keymap.set("n", "<f8>", "<cmd>:lua require('dapui').toggle()<cr>")
 vim.keymap.set("n", "<leader>dc", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", opts)
