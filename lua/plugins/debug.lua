@@ -34,10 +34,36 @@ return {
         dapui.setup()
 
         dap.adapters.java = function(callback)
-            callback({
+            callback(
+            {
                 type = "server",
                 host = "127.0.0.1",
-                port = port,
+                port = 8080,
+            },
+            {
+                type = "server",
+                host = "127.0.0.1",
+                port = 8081,
+            },
+            {
+                type = "server",
+                host = "127.0.0.1",
+                port = 8082,
+            },
+            {
+                type = "server",
+                host = "127.0.0.1",
+                port = 8083,
+            },
+            {
+                type = "server",
+                host = "127.0.0.1",
+                port = 8084,
+            },
+            {
+                type = "server",
+                host = "127.0.0.1",
+                port = 8085,
             })
         end
 

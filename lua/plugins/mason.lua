@@ -21,8 +21,8 @@ return {
             -- vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
-            vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-            -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+            -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         end
 
         java.setup({
@@ -73,12 +73,12 @@ return {
         })
 
         mason_lspconfig.setup_handlers {
-			function (server_name)
-				require("lspconfig")[server_name].setup {
-					capabilities = capabilities,
-					on_attach = on_attach,
-				}
-			end,
+            function(server_name)
+                require("lspconfig")[server_name].setup {
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                }
+            end,
         }
 
         lspconfig.jdtls.setup({

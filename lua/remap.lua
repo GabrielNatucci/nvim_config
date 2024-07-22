@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-
 vim.g.mapleader = " "
 
 -- explorador de arquivos
@@ -22,6 +21,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>")
+vim.api.nvim_set_keymap("n", "<Leader>ng", ":lua require('neogen').generate()<CR>", opts)
 
 -- lspsaga
 vim.keymap.set("n", "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>")

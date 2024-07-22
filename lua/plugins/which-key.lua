@@ -37,7 +37,6 @@ return {
                 -- Most attributes can be inherited or overridden on any level
                 -- There's no limit to the depth of nesting
                 mode = { "n"},              -- NORMAL and VISUAL mode
-                { "<leader>q", desc = "Quit" }, -- no need to specify mode since it's inherited
                 { "<leader>e", desc = "File explorer" }, -- no need to specify mode since it's inherited
                 { "<leader>f", desc = "Find current file in explorer" }, -- no need to specify mode since it's inherited
                 { "<leader>w", desc = "Save" },
@@ -63,12 +62,14 @@ return {
                 { "<leader>ds", desc = "Debug stop" },
                 { "<leader>dr", desc = "Reset dapui interface" },
 
+                { "<leader>nf", desc = "Generate anottation" },
+
                 { "<leader>h", desc = "Harpoon" },
                 { "<leader>ha", desc = "Harpoon add file" },
                 { "<leader>hq", desc = "Harpoon quick menu" },
 
                 { "<leader>j", desc = "Java"},
-                { "<larder>jr", desc = "Java Run" },
+                { "<leader>jr", desc = "Java Run" },
                 { "<leader>js", desc = "Java Stop" },
 
                 { "<leader>p", desc = "Netrw" },

@@ -31,13 +31,13 @@ M.config = function()
             ["<C-Space>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
             -- ["<tab>"] = cmp.mapping.continue(), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-            ['<Tab>'] = cmp.mapping.select_next_item({behavior = 'select'}),
-            ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+            ['<Tab>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
+            ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
             ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
-            { name = "nvim_lua" },
+            -- { name = "nvim_lua" },
             { name = "luasnip" }, -- For luasnip users.
             -- { name = "orgmode" },
         }, {
@@ -54,6 +54,31 @@ M.config = function()
             { name = "cmdline" },
         }),
     })
+
+    vim.diagnostic.config({
+        float = {
+            focusable = false,
+            style = "minimal",
+            border = "rounded",
+            source = "always",
+            header = "",
+            prefix = "",
+        },
+    })
+
+    local ls = require("luasnip")
+    ls.filetype_extend("javascript", { "jsdoc" })
+
+    vim.keymap.set({ "i" }, "<C-s>e", function() ls.expand() end, { silent = true })
+
+    vim.keymap.set({ "i", "s" }, "<C-s>;", function() ls.jump(1) end, { silent = true })
+    vim.keymap.set({ "i", "s" }, "<C-s>,", function() ls.jump(-1) end, { silent = true })
+
+    vim.keymap.set({ "i", "s" }, "<C-E>", function()
+        if ls.choice_active() then
+            ls.change_choice(1)
+        end
+    end, { silent = true })
 end
 
 return M
