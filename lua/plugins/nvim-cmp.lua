@@ -18,9 +18,7 @@ M.config = function()
     cmp.mapping.abort()
 
     cmp.setup({
-        enabled = function()
-            return vim.fn.reg_recording() == ''
-        end,
+        enabled = true,
         snippet = {
             expand = function(args)
                 require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
