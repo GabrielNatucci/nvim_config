@@ -63,7 +63,7 @@ vim.keymap.set("n", "\\", "<C-w>v")
 vim.keymap.set("n", "|", "<C-w>s")
 
 -- sair do terminal
-vim.keymap.set('t', '<Esc>', "<C-\\><C-n>")
+-- vim.keymap.set('t', '<Esc>', "<C-\\><C-n>")
 
 -- JAVA
 vim.keymap.set("n", "<leader>jr", "<cmd>:JavaRunnerRunMain<cr>")
