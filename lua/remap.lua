@@ -83,4 +83,4 @@ vim.keymap.set("n", "<leader>dr", "<cmd>:lua require('dapui').open({reset = true
 
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerStop<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })

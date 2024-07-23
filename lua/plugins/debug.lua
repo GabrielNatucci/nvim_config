@@ -35,11 +35,11 @@ return {
 
         dap.adapters.java = function(callback)
             callback(
-            {
-                type = "server",
-                host = "127.0.0.1",
-                port = 8080,
-            })
+                {
+                    type = "server",
+                    host = "127.0.0.1",
+                    port = 8080,
+                })
         end
 
         dap.configurations.java = {
@@ -57,7 +57,6 @@ return {
             command = "gdb",
             args = { "-i", "dap" }
         }
-
         dap.configurations.c = {
             {
                 name = "Launch",
