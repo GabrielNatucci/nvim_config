@@ -35,5 +35,19 @@ vim.opt.updatetime = 50
 
 vim.opt.cmdheight = 0
 
-vim.fn.sign_define('DapBreakpoint', {text='•', texthl='red', linehl='', numhl=''})
-vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg=0, fg='#61afef', bg='#31353f' })
+vim.fn.sign_define('DapBreakpoint', { text = '•', texthl = 'red', linehl = '', numhl = '' })
+vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f' })
+
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi NormalNC guibg=NONE ctermbg=NONE")
+vim.cmd("hi LineNr guibg=NONE ctermbg=NONE")
+vim.cmd("hi Title guibg=NONE ctermbg=NONE")
+vim.cmd("hi Folded guibg=NONE ctermbg=NONE")
+vim.cmd("hi NonText guibg=NONE ctermbg=NONE")
+vim.cmd("hi SpecialKey guibg=NONE ctermbg=NONE")
+vim.cmd("hi VertSplit guibg=NONE ctermbg=NONE")
+vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
+vim.cmd("hi EndOfBuffer guibg=NONE ctermbg=NONE")
+vim.cmd("hi TablineFill guibg=NONE ctermbg=NONE")
+vim.cmd("hi FidgetTitle guibg=NONE ctermbg=NONE")
+vim.cmd("hi FidgetTask guibg=NONE ctermbg=NONE")

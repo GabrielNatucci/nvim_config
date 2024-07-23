@@ -25,8 +25,8 @@ M.config = function()
             end,
         },
         window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
+            -- completion = cmp.config.window.bordered(),
+            -- documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-Space>"] = cmp.mapping.complete(),
@@ -60,7 +60,7 @@ M.config = function()
         float = {
             focusable = false,
             style = "minimal",
-            border = "rounded",
+            -- border = "rounded",
             source = "always",
             header = "",
             prefix = "",
