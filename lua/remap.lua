@@ -91,5 +91,5 @@ vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, 
 vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
 -- terminal
-vim.api.nvim_set_keymap('n', '<c-t>', "<cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-[>', "<c-\\><c-n>", { noremap = true, silent = true })
+vim.keymap.set('n', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
+vim.keymap.set('t', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
