@@ -2,10 +2,7 @@ require("config.lazy")
 require("remap")
 require("utils.firefox-debug-adapter")
 
--- teste para ver o problema do cmp parar de funcionar de vez em quando
--- print(vim.api.nvim_get_option_value('buftype', { buf = 0 }) == 'prompt')
--- print(vim.fn.reg_recording() ~= '')
--- print(vim.fn.reg_executing() ~= '')
+vim.api.nvim_set_option("clipboard", "unnamed")
 
 vim.cmd.colorscheme('tokyonight-moon')
 

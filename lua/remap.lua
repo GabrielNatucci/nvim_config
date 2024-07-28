@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 -- telescope
 vim.keymap.set("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
 vim.keymap.set("n", "<C-g>", "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
-vim.keymap.set("n", "<C-t>", "<cmd>lua require('telescope.builtin').grep_string({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
+-- vim.keymap.set("n", "<C-t>", "<cmd>lua require('telescope.builtin').grep_string({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
 
 -- para substituir todas as ocorrências de uma palavra
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -56,6 +56,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- recarrega config
 vim.keymap.set("n", "<leader><leader>", "<cmd>so %<cr>")
 
+vim.api.nvim_set_option("clipboard", "unnamed")
 -- navegação
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
@@ -66,10 +67,14 @@ vim.keymap.set("n", "|", "<C-w>s")
 
 -- sair do terminal
 -- vim.keymap.set('t', '<Esc>', "<C-\\><C-n>")
+--
+--
 
 -- JAVA
 vim.keymap.set("n", "<leader>jr", "<cmd>:JavaRunnerRunMain<cr>")
 vim.keymap.set("n", "<leader>js", "<cmd>:JavaRunnerStopMain<cr>")
+
+vim.keymap.set("v", "<leader>y", "+y")
 
 -- DEBUG
 vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').continue()<cr>")
@@ -84,3 +89,7 @@ vim.keymap.set("n", "<leader>dr", "<cmd>:lua require('dapui').open({reset = true
 -- COMPILER
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
+-- terminal
+vim.api.nvim_set_keymap('n', '<c-t>', "<cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<c-[>', "<c-\\><c-n>", { noremap = true, silent = true })
