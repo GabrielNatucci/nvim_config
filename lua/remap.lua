@@ -3,8 +3,9 @@ vim.g.mapleader = " "
 
 -- explorador de arquivos
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
-vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr>")
+-- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
+-- vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr>")
 
 -- salvar e sair
 vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
@@ -31,8 +32,10 @@ vim.keymap.set("n", "<leader>ca", "<cmd>:Lspsaga code_action<cr>")
 vim.keymap.set("n", "<leader>cd", "<cmd>:Lspsaga goto_definition<cr>")
 vim.keymap.set("n", "<leader>ct", "<cmd>:Lspsaga peek_type_definition<cr>")
 vim.keymap.set("n", "<leader>cr", "<cmd>:Lspsaga rename<cr>")
-vim.keymap.set("n", "H", "<cmd>:Lspsaga hover_doc<cr>")
+
 vim.keymap.set("n", "K", "<cmd>:Lspsaga diagnostic_jump_next<cr>")
+vim.keymap.set("n", "L", "<cmd>:lua vim.diagnostic.goto_next()<cr>")
+vim.keymap.set("n", "H", "<cmd>:lua vim.diagnostic.goto_prev()<cr>")
 vim.keymap.set("n", "M", "<cmd>:Maven<cr>")
 
 -- harpoon
@@ -91,5 +94,10 @@ vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, 
 vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
 -- terminal
-vim.keymap.set('n', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>a", { noremap = true, silent = true })
 vim.keymap.set('t', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
+
+-- CLIPBOARD
+--
+vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>p', '"+p<cr>', { noremap = true, silent = true })
