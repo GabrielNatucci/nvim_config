@@ -11,7 +11,7 @@ return {
         require('harpoon').setup({
             menu = {
                 width = 130,
-                height = 30
+                height = 20
             }
         })
     end
