@@ -51,5 +51,6 @@
   "trouble.nvim": { "branch": "main", "commit": "6efc446226679fda0547c0fd6a7892fd5f5b15d8" },
   "vim-codelens": { "branch": "master", "commit": "ae1d478cc65e8e0ef21ffc51d2a02604bf37bc86" },
   "vim-visual-multi": { "branch": "master", "commit": "38b0e8d94a5499ccc17d6159763d32c79f53417b" },
-  "which-key.nvim": { "branch": "main", "commit": "c1b062ae95c3ca3e6eb87c075da991523605d79b" }
+  "which-key.nvim": { "branch": "main", "commit": "c1b062ae95c3ca3e6eb87c075da991523605d79b" },
+  "wrapwords.nvim": { "branch": "main", "commit": "4b285ea0990564c76fcfb05c7269ad9949e2fc75" }
 }
