@@ -23,6 +23,7 @@
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "maven.nvim": { "branch": "main", "commit": "f73a32c4e3f72ebf805539a25dc64b0979d335da" },
   "mini.icons": { "branch": "main", "commit": "fe63fe080e76d80713557e5f0c65bc15b14b152d" },
+  "minty": { "branch": "main", "commit": "6e5c4cfc66e5dbb248ab78293d1c147de0c33a54" },
   "neogen": { "branch": "main", "commit": "4a2f68d3eae0018b04132f1d4590e51484043354" },
   "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
   "null-ls.nvim": { "branch": "main", "commit": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" },
@@ -52,6 +53,7 @@
   "trouble.nvim": { "branch": "main", "commit": "6efc446226679fda0547c0fd6a7892fd5f5b15d8" },
   "vim-codelens": { "branch": "master", "commit": "ae1d478cc65e8e0ef21ffc51d2a02604bf37bc86" },
   "vim-visual-multi": { "branch": "master", "commit": "38b0e8d94a5499ccc17d6159763d32c79f53417b" },
+  "volt": { "branch": "main", "commit": "c99a2f4ece14ff501f14e4c10fe9cd60b22757a8" },
   "which-key.nvim": { "branch": "main", "commit": "c1b062ae95c3ca3e6eb87c075da991523605d79b" },
   "wrapwords.nvim": { "branch": "main", "commit": "4b285ea0990564c76fcfb05c7269ad9949e2fc75" }
 }
