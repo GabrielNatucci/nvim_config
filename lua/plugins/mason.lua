@@ -8,6 +8,7 @@ return {
         "rcarriga/cmp-dap"
     },
 
+
     config = function()
         local mason_lspconfig = require("mason-lspconfig")
         local lspconfig = require("lspconfig")
@@ -17,11 +18,11 @@ return {
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         local on_attach = function(_, _)
-            vim.keymap.set("n", "rn", vim.lsp.buf.rename, {})
-            -- vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "lrn", vim.lsp.buf.rename, {})
+            vim.keymap.set("n", "lca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "lgr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
-            -- vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         end
 
@@ -71,6 +72,7 @@ return {
             },
             automatic_installation = true,
         })
+
 
         mason_lspconfig.setup_handlers {
             function(server_name)

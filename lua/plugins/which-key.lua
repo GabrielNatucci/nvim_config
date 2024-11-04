@@ -77,7 +77,8 @@ return {
 
                 { "<leader>l", desc = "LSP" },
                 { "<leader>lf", desc = "Format" },
-                { "<leader>lr", desc = "Restart Server" },
+                { "<leader>lR", desc = "Restart Server" },
+                { "<leader>lrn", desc = "Rename type" },
 
                 { "<F5>", desc = "Debug continue/start" },
                 { "<F4>", desc = "Debug toggle breakpoint" },

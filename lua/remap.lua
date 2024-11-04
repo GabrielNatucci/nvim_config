@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 
 -- explorador de arquivos
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
-vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
--- vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr>")
+vim.keymap.set("n", "<leader>o", "<cmd>Oil<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr>")
 
 -- salvar e sair
 vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
@@ -17,10 +17,6 @@ vim.keymap.set("n", "<c-a>", "<cmd>qa!<cr>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("v", '<leader>"', "<cmd>:Wrapwordsdoublequotes<cr>")
-vim.keymap.set("v", "<leader>'", "<cmd>:Wrapwordssinglequotes<cr>")
-vim.keymap.set("v", "<leader>(", "<cmd>:Wrapwordsparentheses<cr>")
-
 -- utilitários
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -29,6 +25,11 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>")
 vim.api.nvim_set_keymap("n", "<Leader>ng", ":lua require('neogen').generate()<CR>", opts)
+
+-- wrapwords
+vim.keymap.set("v", '"', "<cmd>:Wrapwordsdoublequotes<cr>")
+vim.keymap.set("v", "'", "<cmd>:Wrapwordssinglequotes<cr>")
+vim.keymap.set("v", "(", "<cmd>:Wrapwordsparentheses<cr>")
 
 -- lspsaga
 vim.keymap.set("n", "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>")
