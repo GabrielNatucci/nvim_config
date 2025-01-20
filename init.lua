@@ -3,8 +3,7 @@ require("remap")
 require("utils.firefox-debug-adapter")
 
 vim.api.nvim_set_option("clipboard", "unnamed")
-
-vim.cmd.colorscheme('tokyonight-moon')
+vim.cmd.colorscheme('catppuccin-macchiato')
 
 vim.opt.guicursor = ""
 

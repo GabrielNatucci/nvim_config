@@ -31,7 +31,7 @@ return {
                 },
             },
             renderer = {
-                indent_width = 2,
+                indent_width = 3,
                 indent_markers = {
                     enable = true,
                     icons = {
