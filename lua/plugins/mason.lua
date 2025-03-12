@@ -38,25 +38,36 @@ return {
                 'build.gradle.kts',
                 '.git',
             },
-            java_test = {
-                enable = true,
-            },
             java_debug_adapter = {
                 enable = true,
+                version = '0.58.1',
             },
-            spring_boot_tools = {
-                enable = true,
-            },
-            jdk = {
-                auto_install = true,
-            },
-            notifications = {
-                dap = true,
-            },
+            -- jdk = {
+            --     -- install jdk using mason.nvim
+            --     auto_install = true,
+            -- },
             verification = {
+                -- nvim-java checks for the order of execution of following
+                -- * require('java').setup()
+                -- * require('lspconfig').jdtls.setup()
+                -- IF they are not executed in the correct order, you will see a error
+                -- notification.
+                -- Set following to false to disable the notification if you know what you
+                -- are doing
                 invalid_order = true,
+
+                -- nvim-java checks if the require('java').setup() is called multiple
+                -- times.
+                -- IF there are multiple setup calls are executed, an error will be shown
+                -- Set following property value to false to disable the notification if
+                -- you know what you are doing
                 duplicate_setup_calls = true,
-                invalid_mason_registry = true,
+
+                -- nvim-java checks if nvim-java/mason-registry is added correctly to
+                -- mason.nvim plugin.
+                -- IF it's not registered correctly, an error will be thrown and nvim-java
+                -- will stop setup
+                invalid_mason_registry = false,
             },
         })
 
@@ -83,9 +94,23 @@ return {
             end,
         }
 
+
         lspconfig.jdtls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            settings = {
+                java = {
+                    configuration = {
+                        runtimes = {
+                            {
+                                name = "Java",
+                                path = "java",
+                                default = true,
+                            }
+                        }
+                    }
+                }
+            }
         })
     end,
 }
