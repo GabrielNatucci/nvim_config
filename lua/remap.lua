@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr> <C-l>")
 vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
 vim.keymap.set("n", "<c-s>", "<cmd>w!<cr>")
 -- vim.keymap.set("n", "<c-q>", "<cmd>q!<cr>")
-vim.keymap.set("n", "<c-a>", "<cmd>qa!<cr>")
+-- vim.keymap.set("n", "<c-a>", "<cmd>qa!<cr>")
 
 -- para mover linhas para cima e para baixo
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -86,17 +86,19 @@ vim.keymap.set("v", "<leader>y", "+y")
 
 -- DEBUG
 vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').continue()<cr>")
-vim.keymap.set("n", "<f1>", "<cmd>:lua require('dap').step_into()<cr>zz")
-vim.keymap.set("n", "<f2>", "<cmd>:lua require('dap').step_over()<cr>zz")
-vim.keymap.set("n", "<f4>", "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>")
-vim.keymap.set("n", "<f8>", "<cmd>:lua require('dapui').toggle()<cr>")
+vim.keymap.set("n", "<f8>", "<cmd>:lua require('dap').continue()<cr>")
+vim.keymap.set("n", "<f7>", "<cmd>:lua require('dap').step_into()<cr>zz")
+vim.keymap.set("n", "<f6>", "<cmd>:lua require('dap').step_over()<cr>zz")
+-- vim.keymap.set("n", "<f4>", "")
+vim.keymap.set("n", "<f10>", "<cmd>:lua require('dapui').toggle()<cr>")
 vim.keymap.set("n", "<leader>dc", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", opts)
-vim.keymap.set("n", "<leader>ds", "<cmd>:DapTerminate<cr>", opts)
+vim.keymap.set("n", "<leader>ds", "<cmd>:lua require('dap').continue()<cr>", opts)
+vim.keymap.set("n", "<leader>dS", "<cmd>:DapTerminate<cr>", opts)
 vim.keymap.set("n", "<leader>dr", "<cmd>:lua require('dapui').open({reset = true})<cr>", opts)
 
 -- COMPILER
-vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<co>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<cr>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
 -- terminal
 vim.keymap.set('n', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>a", { noremap = true, silent = true })
@@ -106,3 +108,4 @@ vim.keymap.set('t', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>", { noremap = true
 --
 vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>p', '"+p<cr>', { noremap = true, silent = true })
+

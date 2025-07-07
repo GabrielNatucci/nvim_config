@@ -36,61 +36,62 @@ return {
                 -- Nested mappings are allowed and can be added in any order
                 -- Most attributes can be inherited or overridden on any level
                 -- There's no limit to the depth of nesting
-                mode = { "n"},              -- NORMAL and VISUAL mode
-                { "<leader>e", desc = "File explorer" }, -- no need to specify mode since it's inherited
-                { "<leader>f", desc = "Find current file in explorer" }, -- no need to specify mode since it's inherited
-                { "<leader>w", desc = "Save" },
-                { "<leader>x", desc = "Turn a file executable" },
+                mode = { "n" },                                                 -- NORMAL and VISUAL mode
+                { "<leader>e",        desc = "File explorer" },                 -- no need to specify mode since it's inherited
+                { "<leader>f",        desc = "Find current file in explorer" }, -- no need to specify mode since it's inherited
+                { "<leader>w",        desc = "Save" },
+                { "<leader>x",        desc = "Turn a file executable" },
 
-                { "<leader>s", desc = "Replace all occurrences of a word" },
+                { "<leader>s",        desc = "Replace all occurrences of a word" },
 
                 { "<leader><leader>", desc = "Reload neovim config" },
 
-                { "<leader>b", desc = "Buffers opened" },
+                { "<leader>b",        desc = "Buffers opened" },
 
-                { "<leader>g", desc = "Git" },
+                { "<leader>g",        desc = "Git" },
 
-                { "<leader>c", desc = "Codelens" },
-                { "<leader>ca", desc = "Code Actions" },
-                { "<leader>ci", desc = "Incoming calls" },
-                { "<leader>cd", desc = "Go to definition" },
-                { "<leader>cr", desc = "Rename" },
-                { "<leader>ct", desc = "Peak Definition" },
+                { "<leader>c",        desc = "Codelens" },
+                { "<leader>ca",       desc = "Code Actions" },
+                { "<leader>ci",       desc = "Incoming calls" },
+                { "<leader>cd",       desc = "Go to definition" },
+                { "<leader>cr",       desc = "Rename" },
+                { "<leader>ct",       desc = "Peak Definition" },
 
-                { "<leader>d", desc = "Debug" },
-                { "<leader>dc", desc = "Clear all breakpoints" },
-                { "<leader>ds", desc = "Debug stop" },
-                { "<leader>dr", desc = "Reset dapui interface" },
+                { "<leader>d",        desc = "Debug" },
+                { "<leader>dc",       desc = "Clear all breakpoints" },
+                { "<leader>ds",       desc = "Debug stop" },
+                { "<leader>dr",       desc = "Reset dapui interface" },
 
-                { "<leader>nf", desc = "Generate anottation" },
+                { "<leader>nf",       desc = "Generate anottation" },
 
-                { "<leader>h", desc = "Harpoon" },
-                { "<leader>ha", desc = "Harpoon add file" },
-                { "<leader>hq", desc = "Harpoon quick menu" },
+                { "<leader>h",        desc = "Harpoon" },
+                { "<leader>ha",       desc = "Harpoon add file" },
+                { "<leader>hq",       desc = "Harpoon quick menu" },
 
-                { "<leader>j", desc = "Java"},
-                { "<leader>jr", desc = "Java Run" },
-                { "<leader>js", desc = "Java Stop" },
+                { "<leader>j",        desc = "Java" },
+                { "<leader>jr",       desc = "Java Run" },
+                { "<leader>js",       desc = "Java Stop" },
 
-                { "<leader>p", desc = "Netrw" },
-                { "<leader>pv", desc = "Netrw" },
+                { "<leader>p",        desc = "Netrw" },
+                { "<leader>pv",       desc = "Netrw" },
 
-                { "<leader>l", desc = "LSP" },
-                { "<leader>lf", desc = "Format" },
-                { "<leader>lR", desc = "Restart Server" },
-                { "<leader>lrn", desc = "Rename type" },
+                { "<leader>l",        desc = "LSP" },
+                { "<leader>lf",       desc = "Format" },
+                { "<leader>lR",       desc = "Restart Server" },
+                { "<leader>lrn",      desc = "Rename type" },
 
-                { "<leader>t", desc = "Telescope" },
-                { "<leader>tg", desc = "Git" },
+                { "<leader>t",        desc = "Telescope" },
+                { "<leader>tg",       desc = "Git" },
 
-                { "<F5>", desc = "Debug continue/start" },
-                { "<F4>", desc = "Debug toggle breakpoint" },
-                { "<F1>", desc = "Debug step into" },
-                { "<F2>", desc = "Debug step over" },
-                { "<F8>", desc = "Debug toggle UI" },
-                { "<F6>", desc = "Compile/run code" },
+                { "<F5>",             desc = "Debug continue/start" },
+                { "<F4>",             desc = "Debug toggle breakpoint" },
+                { "<F1>",             desc = "Debug step into" },
+                { "<F2>",             desc = "Debug step over" },
+                { "<F8>",             desc = "Debug toggle UI" },
+                { "<F6>",             desc = "Compile/run code" },
+                { "<leader>b",        "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
+                { "<leader>ac",       "<cmd>CodeCompanionChat<cr>",                                             desc = "Code Companion chat", mode = "n" },
             }
         })
     end
 }
-
