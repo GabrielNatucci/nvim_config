@@ -47,13 +47,21 @@ return {
             {
                 type = 'java',
                 request = 'attach',
-                name = "Debug (Attach) - 8080",
+                name = "Debug Remoto - 8080",
                 hostName = "127.0.0.1",
                 port = 8080,
+                projectName = "",
+                mainClass = "",
             },
-        }
-
-        dap.configurations.java = {
+            {
+                type = 'java',
+                request = 'attach',
+                name = "Debug Remoto - 5005",
+                hostName = "127.0.0.1",
+                port = 5005,
+                projectName = "",
+                mainClass = "",
+            },
             {
                 -- You need to extend the classPath to list your dependencies.
                 -- `nvim-jdtls` would automatically add the `classPaths` property if it is missing
@@ -79,6 +87,7 @@ return {
             command = "gdb",
             args = { "-i", "dap" }
         }
+
         dap.configurations.c = {
             {
                 name = "Launch",
