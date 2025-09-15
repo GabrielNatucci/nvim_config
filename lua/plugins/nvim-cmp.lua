@@ -9,6 +9,7 @@ local M = {
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
         "L3MON4D3/LuaSnip",
+        "kndndrj/cmp-dbee",
     },
 }
 
@@ -39,9 +40,8 @@ M.config = function()
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
-            -- { name = "nvim_lua" },
             { name = "luasnip" }, -- For luasnip users.
-            -- { name = "orgmode" },
+            { name = "dbee" },    -- 🔥 integração do nvim-dbee com o cmp
         }, {
             { name = "buffer" },
             { name = "path" },

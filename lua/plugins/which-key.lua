@@ -89,8 +89,11 @@ return {
                 { "<F2>",             desc = "Debug step over" },
                 { "<F8>",             desc = "Debug toggle UI" },
                 { "<F6>",             desc = "Compile/run code" },
-                { "<leader>b",        "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
+
+                { "<leader>db",        "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
                 { "<leader>ac",       "<cmd>CodeCompanionChat<cr>",                                             desc = "Code Companion chat", mode = "n" },
+                { "<leader>b",             desc = "Banco de dados" },
+                { "<leader>bt",        "<cmd>Dbee<cr>", desc = "Toggle DBEE",   mode = "n" },
             }
         })
     end
