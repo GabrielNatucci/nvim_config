@@ -6,7 +6,7 @@ require("config.lazy")
 vim.api.nvim_set_option("clipboard", "unnamed")
 
 -- Set colorscheme
-vim.cmd.colorscheme('catppuccin-macchiato')
+vim.cmd.colorscheme('onedark')
 
 -- Configure cursor
 vim.opt.guicursor = ""
@@ -23,6 +23,7 @@ vim.opt.expandtab = true
 
 -- Sign column
 vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 2
 
 -- Indentation
 vim.opt.smartindent = true

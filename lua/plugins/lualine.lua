@@ -43,5 +43,4 @@ return {
             extensions = {}
         }
     end
-
 }

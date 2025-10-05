@@ -75,11 +75,13 @@ return {
         mason_lspconfig.setup({
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer",
                 "eslint",
                 "jdtls",
                 "ts_ls",
                 "clangd",
+                "css-lsp",
+                "html-lsp",
+                "xmlformatter",
             },
             automatic_installation = true,
         })

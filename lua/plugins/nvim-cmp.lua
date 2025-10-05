@@ -6,15 +6,15 @@ local M = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
+        "ray-x/cmp-sql",
         "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets",
-        "L3MON4D3/LuaSnip",
         "kndndrj/cmp-dbee",
     },
 }
 
-
 M.config = function()
+    require("luasnip.loaders.from_vscode").lazy_load()
+
     local cmp = require("cmp")
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
     cmp.mapping.abort()
@@ -41,7 +41,6 @@ M.config = function()
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
             { name = "luasnip" }, -- For luasnip users.
-            { name = "dbee" },    -- 🔥 integração do nvim-dbee com o cmp
         }, {
             { name = "buffer" },
             { name = "path" },
@@ -57,11 +56,22 @@ M.config = function()
         }),
     })
 
+    cmp.setup.filetype("sql", {
+        sources = cmp.config.sources({
+            { name = "nvim_lsp" },
+            { name = "luasnip" },
+            { name = "dbee" },
+            { name = "sql" }, -- só aparece em arquivos .sql
+        }, {
+            { name = "buffer" },
+        }),
+    })
+
     vim.diagnostic.config({
         float = {
             focusable = false,
             style = "minimal",
-            -- border = "rounded",
+            border = "rounded",
             source = "always",
             header = "",
             prefix = "",
