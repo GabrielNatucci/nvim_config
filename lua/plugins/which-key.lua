@@ -80,7 +80,7 @@ return {
                 { "<leader>lR",       desc = "Restart Server" },
                 { "<leader>lrn",      desc = "Rename type" },
 
-                { "<leader>t",        desc = "Telescope" },
+                { "<leader>t",        desc = "Trouble/Telescope" },
                 { "<leader>tg",       desc = "Git" },
 
                 { "<F5>",             desc = "Debug continue/start" },

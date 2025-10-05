@@ -24,11 +24,11 @@ return {
 
     keys = {
         -- code
-        { "<leader>ts", "<cmd>:Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Symbols" },
-        { "<leader>tS", "<cmd>:Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Document Symbols" },
-        { "<leader>tr", "<cmd>:Telescope lsp_references<cr>", desc = "References" },
-        { "<leader>td", "<cmd>:Telescope diagnostics<cr>", desc = "Diagnostics" },
-        { "<leader>ti", "<cmd>:Telescope lsp_implementations<cr>", desc = "Implementations" },
+        -- { "<leader>ts", "<cmd>:Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Symbols" },
+        -- { "<leader>tS", "<cmd>:Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Document Symbols" },
+        -- { "<leader>tr", "<cmd>:Telescope lsp_references<cr>", desc = "References" },
+        -- { "<leader>td", "<cmd>:Telescope diagnostics<cr>", desc = "Diagnostics" },
+        -- { "<leader>ti", "<cmd>:Telescope lsp_implementations<cr>", desc = "Implementations" },
 
         -- buffers
         { "<leader>tb", "<cmd>:Telescope buffers<cr>", desc = "Buffers" },
