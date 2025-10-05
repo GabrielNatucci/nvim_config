@@ -82,6 +82,8 @@ return {
                 "css-lsp",
                 "html-lsp",
                 "xmlformatter",
+                "prettier",
+                "prettierd",
             },
             automatic_installation = true,
         })

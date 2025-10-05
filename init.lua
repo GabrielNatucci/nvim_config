@@ -1,6 +1,7 @@
 require("remap")
 require("utils.firefox-debug-adapter")
 require("config.lazy")
+require("config.configs")
 
 -- Set clipboard to unnamed
 vim.api.nvim_set_option("clipboard", "unnamed")
