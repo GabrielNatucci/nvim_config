@@ -5,6 +5,9 @@ return {
             lightbulb = {
                 enable = false,
             },
+            breadcrumbs = {
+                enable = false,
+            },
             border = {
             },
             diagnostic = {

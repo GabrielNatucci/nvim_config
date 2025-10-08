@@ -34,6 +34,7 @@ vim.keymap.set("v", "(", "<cmd>:Wrapwordsparentheses<cr>")
 -- lspsaga
 vim.keymap.set("n", "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>")
 vim.keymap.set("n", "<leader>ca", "<cmd>:Lspsaga code_action<cr>")
+vim.keymap.set("n", "<leader>cf", "<cmd>:Lspsaga finder<cr>")
 vim.keymap.set("n", "<leader>cd", "<cmd>:Lspsaga goto_definition<cr>")
 vim.keymap.set("n", "<leader>ct", "<cmd>:Lspsaga peek_type_definition<cr>")
 vim.keymap.set("n", "<leader>cr", "<cmd>:Lspsaga rename<cr>")

@@ -52,6 +52,7 @@ return {
 
                 { "<leader>c",        desc = "Codelens" },
                 { "<leader>ca",       desc = "Code Actions" },
+                { "<leader>cf",       desc = "Code finder" },
                 { "<leader>ci",       desc = "Incoming calls" },
                 { "<leader>cd",       desc = "Go to definition" },
                 { "<leader>cr",       desc = "Rename" },
