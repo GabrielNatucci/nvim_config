@@ -7,7 +7,7 @@ require("config.configs")
 vim.api.nvim_set_option("clipboard", "unnamed")
 
 -- Set colorscheme
-vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('tokyonight-storm')
 
 -- Configure cursor
 vim.opt.guicursor = ""

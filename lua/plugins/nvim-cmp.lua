@@ -78,6 +78,14 @@ M.config = function()
         },
     })
 
+    -- isso aqui é para desativar o nvim_CMP quando eu estiver com o telescope aberto PLMDS!!!
+    vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "TelescopePrompt" },
+        callback = function()
+            require("cmp").setup.buffer({ enabled = false })
+        end,
+    })
+
     local ls = require("luasnip")
     ls.filetype_extend("javascript", { "jsdoc" })
 
