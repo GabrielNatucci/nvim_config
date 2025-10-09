@@ -26,13 +26,6 @@ return {
             -- { "<leader>f1", hidden = true },           -- hide this keymap
             -- { "<leader>w",  proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
             {
-                "<leader>b",
-                group = "buffers",
-                expand = function()
-                    return require("which-key.extras").expand.buf()
-                end
-            },
-            {
                 -- Nested mappings are allowed and can be added in any order
                 -- Most attributes can be inherited or overridden on any level
                 -- There's no limit to the depth of nesting
@@ -46,7 +39,6 @@ return {
 
                 { "<leader><leader>", desc = "Reload neovim config" },
 
-                { "<leader>b",        desc = "Buffers opened" },
 
                 { "<leader>g",        desc = "Git" },
 
@@ -99,6 +91,8 @@ return {
                 { "<leader>m",        desc = "Minty (bom pra front)"},
                 { "<leader>ms",       "<cmd>Shades<cr>",                                             desc = "Shades", mode = "n" },
                 { "<leader>mh",       "<cmd>Huefy<cr>",                                             desc = "Huefy", mode = "n" },
+
+                { "<leader>b",       "<cmd>DapToggleBreakpoint<cr>",                                              desc = "Toggle breakpoints" },
                 -- { "<leader>b",             desc = "Banco de dados" },
                 -- { "<leader>bt",        "<cmd>Dbee<cr>", desc = "Toggle DBEE",   mode = "n" },
             }

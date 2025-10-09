@@ -54,8 +54,12 @@ vim.opt.updatetime = 50
 vim.opt.cmdheight = 0
 
 -- DAP signs
-vim.fn.sign_define('DapBreakpoint', { text = '•', texthl = 'red', linehl = '', numhl = '' })
-vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f' })
+-- vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'red', linehl = '', numhl = '' })
+-- vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f' })
+-- por exemplo:
+vim.api.nvim_set_hl(0, "MyDapBreakpointHL", { fg = "#FF0000", bg = nil })  -- define a cor vermelha
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "MyDapBreakpointHL", linehl = "", numhl = "" })
+
 
 -- Case insensitive search
 vim.o.ignorecase = true
