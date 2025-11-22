@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr> <C-l>")
 vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
 vim.keymap.set("n", "<c-s>", "<cmd>w!<cr>")
 -- vim.keymap.set("n", "<c-q>", "<cmd>q!<cr>")
-vim.keymap.set("n", "<c-a>", "<cmd>qa!<cr>")
+-- vim.keymap.set("n", "<c-a>", "<cmd>qa!<cr>")
 
 -- para mover linhas para cima e para baixo
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
