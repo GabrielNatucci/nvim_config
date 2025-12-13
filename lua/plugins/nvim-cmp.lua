@@ -44,8 +44,6 @@ M.config = function()
             { name = 'luasnip',  priority = 50 },
             { name = 'buffer',   priority = 30 },
         }, {
-            { name = "buffer" },
-            { name = "path" },
         }),
     })
 

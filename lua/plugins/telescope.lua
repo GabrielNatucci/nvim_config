@@ -10,12 +10,12 @@ return {
                 layout_strategy = 'horizontal',
                 layout_config = {
                     vertical = {
-                        width = 0.95,
-                        height = 0.95,
+                        width = 0.70,
+                        height = 0.80,
                     },
                     horizontal = {
-                        width = 0.95,
-                        height = 0.95,
+                        width = 0.70,
+                        height = 0.80,
                     }
                 },
             }

@@ -8,11 +8,10 @@ return {
         "rcarriga/cmp-dap"
     },
 
-
     config = function()
         local mason_lspconfig = require("mason-lspconfig")
-        local lspconfig = require("lspconfig")
         local mason = require("mason")
+        local lspconfig = vim.lsp.config
         local java = require("java")
 
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -38,36 +37,10 @@ return {
                 'build.gradle.kts',
                 '.git',
             },
-            java_debug_adapter = {
-                enable = true,
-                version = '0.58.2',
-            },
-            -- jdk = {
-            --     -- install jdk using mason.nvim
-            --     auto_install = true,
-            -- },
             verification = {
-                -- nvim-java checks for the order of execution of following
-                -- * require('java').setup()
-                -- * require('lspconfig').jdtls.setup()
-                -- IF they are not executed in the correct order, you will see a error
-                -- notification.
-                -- Set following to false to disable the notification if you know what you
-                -- are doing
                 invalid_order = true,
-
-                -- nvim-java checks if the require('java').setup() is called multiple
-                -- times.
-                -- IF there are multiple setup calls are executed, an error will be shown
-                -- Set following property value to false to disable the notification if
-                -- you know what you are doing
                 duplicate_setup_calls = true,
-
-                -- nvim-java checks if nvim-java/mason-registry is added correctly to
-                -- mason.nvim plugin.
-                -- IF it's not registered correctly, an error will be thrown and nvim-java
-                -- will stop setup
-                invalid_mason_registry = false,
+                invalid_mason_registry = true,
             },
         })
 
@@ -76,30 +49,34 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "eslint",
-                "jdtls",
                 "ts_ls",
                 "clangd",
-                "css-lsp",
-                "html-lsp",
+                "cssls",
+                "html",
                 "xmlformatter",
                 "prettier",
                 "prettierd",
+                "codelldb",
+                "jsonls",
+                "zls",
             },
-            automatic_installation = true,
+            automatic_installation = false,
+            automatic_enable = true
         })
 
-
-        mason_lspconfig.setup_handlers {
-            function(server_name)
-                require("lspconfig")[server_name].setup {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                }
-            end,
+        local servers = {
+            "lua_ls",
+            "eslint",
+            "ts_ls",
+            "clangd",
+            "cssls",
+            "html",
+            "jsonls",
+            "zls",
         }
 
 
-        lspconfig.jdtls.setup({
+        lspconfig['jdtls'] = {
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
@@ -115,6 +92,14 @@ return {
                     }
                 }
             }
-        })
-    end,
+        }
+        local base_config = {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+
+        for _, server in ipairs(servers) do
+            lspconfig[server] = base_config
+        end
+    end
 }
