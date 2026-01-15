@@ -25,25 +25,6 @@ return {
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         end
 
-        java.setup({
-            root_markers = {
-                'settings.gradle',
-                'settings.gradle.kts',
-                'pom.xml',
-                'build.gradle',
-                'mvnw',
-                'gradlew',
-                'build.gradle',
-                'build.gradle.kts',
-                '.git',
-            },
-            verification = {
-                invalid_order = true,
-                duplicate_setup_calls = true,
-                invalid_mason_registry = true,
-            },
-        })
-
         mason.setup()
         mason_lspconfig.setup({
             ensure_installed = {
@@ -75,24 +56,6 @@ return {
             "zls",
         }
 
-
-        lspconfig['jdtls'] = {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = {
-                java = {
-                    configuration = {
-                        runtimes = {
-                            {
-                                name = "Java",
-                                path = "java",
-                                default = true,
-                            }
-                        }
-                    }
-                }
-            }
-        }
         local base_config = {
             on_attach = on_attach,
             capabilities = capabilities,
@@ -101,5 +64,31 @@ return {
         for _, server in ipairs(servers) do
             lspconfig[server] = base_config
         end
+
+        lspconfig('jdtls', {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                java = {
+                    configuration = {
+                        runtimes = {
+                            {
+                                name = "JavaSE-25",
+                                path = "/opt/jdk-25",
+                                default = true,
+                            },
+                            {
+                                name = "JavaSE-21",
+                                path = "/opt/jdk-21",
+                            },
+                            {
+                                name = "JavaSE-17",
+                                path = "/opt/jdk-17",
+                            }
+                        }
+                    }
+                }
+            }
+        })
     end
 }
