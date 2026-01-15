@@ -1,16 +1,12 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    build = ":TSUpdate",
-    config = function()
-        local configs = require("nvim-treesitter.configs")
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
 
-        configs.setup({
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "tsx", "java", "xml", "json" },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end
+    require 'nvim-treesitter'.setup {
+        install_dir = vim.fn.stdpath('data') .. '/site'
+    },
+    require('nvim-treesitter').install({ "python", "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript",
+        "html",
+        "tsx", "java", "xml", "json" }):wait(300000) -- wait max. 5 minutes
 }

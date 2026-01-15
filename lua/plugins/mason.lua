@@ -65,6 +65,26 @@ return {
             lspconfig[server] = base_config
         end
 
+        java.setup({
+            checks = {
+                nvim_version = true, -- Check Neovim version
+                nvim_jdtls_conflict = true, -- Check for nvim-jdtls conflict
+            },
+
+            java_debug_adapter = {
+                enable = true,
+            },
+
+            log = {
+                use_console = true,
+                use_file = true,
+                level = 'info',
+                log_file = vim.fn.stdpath('state') .. '/nvim-java.log',
+                max_lines = 1000,
+                show_location = false,
+            },
+        })
+
         lspconfig('jdtls', {
             on_attach = on_attach,
             capabilities = capabilities,

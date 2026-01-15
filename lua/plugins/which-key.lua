@@ -76,12 +76,12 @@ return {
                 { "<leader>t",        desc = "Trouble/Telescope" },
                 { "<leader>tg",       desc = "Git" },
 
-                { "<F5>",             desc = "Debug continue/start" },
+                { "<F8>",             desc = "Debug continue/start" },
                 { "<F4>",             desc = "Debug toggle breakpoint" },
-                { "<F1>",             desc = "Debug step into" },
-                { "<F2>",             desc = "Debug step over" },
-                { "<F8>",             desc = "Debug toggle UI" },
-                { "<F6>",             desc = "Compile/run code" },
+                { "<F5>",             desc = "Debug step into" },
+                { "<F6>",             desc = "Debug step over" },
+                -- { "<F8>",             desc = "Debug toggle UI" },
+                -- { "<F6>",             desc = "Compile/run code" },
 
                 { "<leader>db",        "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
                 { "<leader>ac",       "<cmd>CodeCompanionChat<cr>",                                             desc = "Code Companion chat", mode = "n" },
