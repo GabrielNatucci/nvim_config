@@ -6,6 +6,7 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
+        "rcarriga/cmp-dap",
         "ray-x/cmp-sql",
         "saadparwaiz1/cmp_luasnip",
         "kndndrj/cmp-dbee",
@@ -17,32 +18,49 @@ return {
         vim.opt.completeopt = { "menu", "menuone", "noselect" }
         cmp.mapping.abort()
 
+
         cmp.setup({
-            enabled = true,
+            enabled = function()
+                return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+                    or require("cmp_dap").is_dap_buffer()
+            end,
             snippet = {
                 expand = function(args)
-                    require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+                    require("luasnip").lsp_expand(args.body)
                 end,
             },
             window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered({
+                    border = "rounded",
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+                }),
+                documentation = cmp.config.window.bordered({
+                    border = "rounded",
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+                }),
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                -- ["<tab>"] = cmp.mapping.continue(), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ['<Tab>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
                 ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-m>'] = cmp.mapping.scroll_docs(4),
             }),
             sources = cmp.config.sources({
-                { name = 'nvim_lsp', priority = 100 },
-                { name = 'path',     priority = 70 },
-                { name = 'luasnip',  priority = 50 },
-                { name = 'buffer',   priority = 30 },
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+                { name = 'path' },
             }, {
+                { name = 'buffer' },
             }),
+        })
+
+        require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+            sources = {
+                { name = "dap" },
+            },
         })
 
         cmp.setup.cmdline(":", {
@@ -91,7 +109,6 @@ return {
 
         vim.keymap.set({ "i", "s" }, "<C-s>;", function() ls.jump(1) end, { silent = true })
         vim.keymap.set({ "i", "s" }, "<C-s>,", function() ls.jump(-1) end, { silent = true })
-
         vim.keymap.set({ "i", "s" }, "<C-E>", function()
             if ls.choice_active() then
                 ls.change_choice(1)

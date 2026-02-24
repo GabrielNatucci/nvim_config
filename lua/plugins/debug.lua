@@ -33,36 +33,36 @@ return {
 
         dapui.setup()
 
-        dap.adapters.java = function(callback)
-            callback(
-                {
-                    type = "server",
-                    host = "127.0.0.1",
-                    port = port,
-                }
-            )
-        end
+        -- dap.adapters.java = function(callback)
+        --     callback(
+        --         {
+        --             type = "server",
+        --             host = "127.0.0.1",
+        --             port = port,
+        --         }
+        --     )
+        -- end
 
-        dap.configurations.java = {
-            {
-                type = 'java',
-                request = 'attach',
-                name = "Debug Remoto - 8080",
-                hostName = "127.0.0.1",
-                port = 8080,
-                projectName = "",
-                mainClass = "",
-            },
-            {
-                type = 'java',
-                request = 'attach',
-                name = "Debug Remoto - 5005",
-                hostName = "127.0.0.1",
-                port = 5005,
-                projectName = "",
-                mainClass = "",
-            }
-        }
+        -- dap.configurations.java = {
+        --     {
+        --         type = 'java',
+        --         request = 'attach',
+        --         name = "Debug Remoto - 8080",
+        --         hostName = "127.0.0.1",
+        --         port = 8080,
+        --         projectName = "demo",
+        --         mainClass = "",
+        --     },
+        --     {
+        --         type = 'java',
+        --         request = 'attach',
+        --         name = "Debug Remoto - 5005",
+        --         hostName = "127.0.0.1",
+        --         port = 5005,
+        --         projectName = "demo",
+        --         mainClass = "",
+        --     }
+        -- }
 
         dap.adapters.gdb = {
             type = "executable",

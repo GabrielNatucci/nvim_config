@@ -114,6 +114,5 @@ vim.keymap.set('n', '<leader>p', '"+p<cr>', { noremap = true, silent = true })
 -- para resize
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize -5<CR>", { desc = "Aumentar largura da janela para direita" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize +5<CR>", { desc = "Aumentar largura da janela para esquerda" })
-vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Aumentar altura da janela" })
-vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Diminuir altura da janela" })
-
+-- vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Aumentar altura da janela" })
+-- vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Diminuir altura da janela" })

@@ -74,6 +74,7 @@ return {
 
             java_debug_adapter = {
                 enable = true,
+                version = '0.58.2',
             },
 
             log = {
@@ -96,11 +97,11 @@ return {
                             {
                                 name = "JavaSE-25",
                                 path = "/opt/jdk-25",
-                                default = true,
                             },
                             {
                                 name = "JavaSE-21",
                                 path = "/opt/jdk-21",
+                                default = true,
                             },
                             {
                                 name = "JavaSE-17",

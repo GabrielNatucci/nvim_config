@@ -83,18 +83,19 @@ return {
                 -- { "<F8>",             desc = "Debug toggle UI" },
                 -- { "<F6>",             desc = "Compile/run code" },
 
-                { "<leader>db",        "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
+                { "<leader>db",       "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
                 { "<leader>ac",       "<cmd>CodeCompanionChat<cr>",                                             desc = "Code Companion chat", mode = "n" },
-                { "<leader>C",        desc = "Compiler Open", mode = "n" },
-                { "<leader>Co",       "<cmd>CompilerOpen<cr>",                                             desc = "Compiler Open", mode = "n" },
-                { "<leader>Cs",       "<cmd>CompilerStop<cr>",                                             desc = "Compiler STOP", mode = "n" },
-                { "<leader>m",        desc = "Minty (bom pra front)"},
-                { "<leader>ms",       "<cmd>Shades<cr>",                                             desc = "Shades", mode = "n" },
-                { "<leader>mh",       "<cmd>Huefy<cr>",                                             desc = "Huefy", mode = "n" },
+                { "<leader>C",        desc = "Compiler Open",                                                   mode = "n" },
+                { "<leader>Co",       "<cmd>CompilerOpen<cr>",                                                  desc = "Compiler Open",       mode = "n" },
+                { "<leader>Cs",       "<cmd>CompilerStop<cr>",                                                  desc = "Compiler STOP",       mode = "n" },
+                { "<leader>m",        desc = "Minty (bom pra front)" },
+                { "<leader>ms",       "<cmd>Shades<cr>",                                                        desc = "Shades",              mode = "n" },
+                { "<leader>mh",       "<cmd>Huefy<cr>",                                                         desc = "Huefy",               mode = "n" },
+                { "<leader>de",       "<Cmd>lua require('dapui').eval()<CR>",                                   desc = "Debug evaluate",      mode = "n" },
 
-                { "<leader>b",       "<cmd>DapToggleBreakpoint<cr>",                                              desc = "Toggle breakpoints" },
+                { "<leader>b",        "<cmd>DapToggleBreakpoint<cr>",                                           desc = "Toggle breakpoints" },
                 -- { "<leader>b",             desc = "Banco de dados" },
-                -- { "<leader>bt",        "<cmd>Dbee<cr>", desc = "Toggle DBEE",   mode = "n" },
+                -- { "<leader>bt",       "<cmd>Dbee<cr>",                                                          desc = "Toggle DBEE",         mode = "n" },
             }
         })
     end
