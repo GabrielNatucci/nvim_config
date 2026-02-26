@@ -2,7 +2,6 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
 -- explorador de arquivos
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>o", "<cmd>Oil<cr>")
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
 vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr> <C-l>")
@@ -10,8 +9,6 @@ vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFindFile<cr> <C-l>")
 -- salvar e sair
 vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
 vim.keymap.set("n", "<c-s>", "<cmd>w!<cr>")
--- vim.keymap.set("n", "<c-q>", "<cmd>q!<cr>")
--- vim.keymap.set("n", "<c-a>", "<cmd>qa!<cr>")
 
 -- para mover linhas para cima e para baixo
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -33,16 +30,11 @@ vim.keymap.set("v", "(", "<cmd>:Wrapwordsparentheses<cr>")
 
 -- lspsaga
 vim.keymap.set("n", "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>")
-vim.keymap.set("n", "<leader>ca", "<cmd>:Lspsaga code_action<cr>")
 vim.keymap.set("n", "<leader>cf", "<cmd>:Lspsaga finder<cr>")
-vim.keymap.set("n", "<leader>cd", "<cmd>:Lspsaga goto_definition<cr>")
-vim.keymap.set("n", "<leader>ct", "<cmd>:Lspsaga peek_type_definition<cr>")
-vim.keymap.set("n", "<leader>cr", "<cmd>:Lspsaga rename<cr>")
+vim.keymap.set("n", "<leader>cp", "<cmd>:Lspsaga peek_type_definition<cr>")
 
-vim.keymap.set("n", "K", "<cmd>:Lspsaga diagnostic_jump_next<cr>")
 vim.keymap.set("n", "L", "<cmd>:lua vim.diagnostic.goto_next()<cr>")
 vim.keymap.set("n", "H", "<cmd>:lua vim.diagnostic.goto_prev()<cr>")
-vim.keymap.set("n", "M", "<cmd>:Maven<cr>")
 
 -- harpoon
 vim.keymap.set("n", "<leader>ha", "<cmd>lua require'harpoon.mark'.add_file()<cr>")
@@ -52,7 +44,7 @@ vim.keymap.set("n", "<leader>hq", "<cmd>lua require('harpoon.ui').toggle_quick_m
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 -- telescope
-vim.keymap.set("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
+vim.keymap.set("n", "<C-r>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
 vim.keymap.set("n", "<C-g>", "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
 -- vim.keymap.set("n", "<C-t>", "<cmd>lua require('telescope.builtin').grep_string({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>")
 
@@ -74,45 +66,20 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "\\", "<C-w>v")
 vim.keymap.set("n", "|", "<C-w>s")
 
--- sair do terminal
--- vim.keymap.set('t', '<Esc>', "<C-\\><C-n>")
---
---
-
--- JAVA
-vim.keymap.set("n", "<leader>jr", "<cmd>:JavaRunnerRunMain<cr>")
-vim.keymap.set("n", "<leader>js", "<cmd>:JavaRunnerStopMain<cr>")
-
-vim.keymap.set("v", "<leader>y", "+y")
-
 -- DEBUG
--- vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').continue()<cr>")
 vim.keymap.set("n", "<f8>", "<cmd>:lua require('dap').continue()<cr>")
 vim.keymap.set("n", "<f5>", "<cmd>:lua require('dap').step_into()<cr>zz")
 vim.keymap.set("n", "<f6>", "<cmd>:lua require('dap').step_over()<cr>zz")
--- vim.keymap.set("n", "<--[[ f ]]4>", "")
 vim.keymap.set("n", "<f10>", "<cmd>:lua require('dapui').toggle()<cr>")
 vim.keymap.set("n", "<leader>dc", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", opts)
 vim.keymap.set("n", "<leader>ds", "<cmd>:lua require('dap').continue()<cr>", opts)
 vim.keymap.set("n", "<leader>dS", "<cmd>:DapTerminate<cr>", opts)
 vim.keymap.set("n", "<leader>dr", "<cmd>:lua require('dapui').open({reset = true})<cr>", opts)
 
--- COMPILER
-vim.api.nvim_set_keymap('n', '<co>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<cr>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
-
 -- terminal
 vim.keymap.set('n', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>a", { noremap = true, silent = true })
 vim.keymap.set('t', '<c-t>', "<c-\\><c-n><cmd>:ToggleTerm<cr>", { noremap = true, silent = true })
-
--- CLIPBOARD
---
-vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>p', '"+p<cr>', { noremap = true, silent = true })
-
-
+        
 -- para resize
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize -5<CR>", { desc = "Aumentar largura da janela para direita" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize +5<CR>", { desc = "Aumentar largura da janela para esquerda" })
--- vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Aumentar altura da janela" })
--- vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Diminuir altura da janela" })

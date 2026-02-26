@@ -18,7 +18,7 @@ return {
 
         local on_attach = function(_, _)
             vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {})
-            vim.keymap.set("n", "<leader>lca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
             vim.keymap.set("n", "<leader>lgr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
@@ -68,8 +68,8 @@ return {
 
         java.setup({
             checks = {
-                nvim_version = true,        -- Check Neovim version
-                nvim_jdtls_conflict = true, -- Check for nvim-jdtls conflict
+                nvim_version = true,
+                nvim_jdtls_conflict = true,
             },
 
             java_debug_adapter = {
