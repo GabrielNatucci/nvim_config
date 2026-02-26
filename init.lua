@@ -1,4 +1,3 @@
-require("remap")
 require("utils.firefox-debug-adapter")
 require("config.lazy")
 require("config.configs")
