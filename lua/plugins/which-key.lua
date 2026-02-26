@@ -19,96 +19,97 @@ return {
     config = function()
         local wk = require("which-key")
         wk.add({
-            -- { "<leader>f",  group = "file" }, -- group
-            -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
-            -- { "<leader>fb", function() print("hello") end,   desc = "Foobar" },
-            -- { "<leader>fn", desc = "New File" },
-            -- { "<leader>f1", hidden = true },           -- hide this keymap
-            -- { "<leader>w",  proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
-            {
-                -- Nested mappings are allowed and can be added in any order
-                -- Most attributes can be inherited or overridden on any level
-                -- There's no limit to the depth of nesting
-                mode = { "n" },                                                 -- NORMAL and VISUAL mode
-                { "<leader>e",        desc = "File explorer" },                 -- no need to specify mode since it's inherited
-                { "<leader>f",        desc = "Find current file in explorer" }, -- no need to specify mode since it's inherited
-                { "<leader>w",        desc = "Save" },
-                { "<leader>x",        desc = "Turn a file executable" },
+            mode = { "n" },
+            { "<leader>o", "<cmd>Oil<cr>", desc = "Oil File Explorer" },
+            { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree File Explorer" },
+            { "<leader>f", "<cmd>NvimTreeFindFile<cr>", desc = "Find current file in NvimTree" },
 
-                { "<leader>s",        desc = "Replace all occurrences of a word" },
+            { "<leader>w", "<cmd>w!<cr>", desc = "Save" },
+            { "<c-s>", "<cmd>w!<cr>", desc = "Save" },
 
-                { "<leader><leader>", desc = "Reload neovim config" },
+            { "<leader>x", "<cmd>!chmod +x %<CR>", desc = "Turn a file executable" },
 
+            { "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Replace all occurrences of a word" },
 
-                { "<leader>g",        desc = "Git" },
+            { "<leader><leader>", "<cmd>so %<cr>", desc = "Reload neovim config" },
 
-                { "<leader>c",        desc = "Codelens" },
-                { "<leader>ca",       desc = "Code Actions" },
-                { "<leader>cf",       desc = "Code finder" },
-                { "<leader>ci",       desc = "Incoming calls" },
-                { "<leader>cd",       desc = "Go to definition" },
-                { "<leader>cr",       desc = "Rename" },
-                { "<leader>ct",       desc = "Peak Definition" },
+            { "<leader>g", desc = "Git" },
 
-                { "<leader>d",        desc = "Debug" },
-                { "<leader>dc",       desc = "Clear all breakpoints" },
-                { "<leader>ds",       desc = "Debug stop" },
-                { "<leader>dr",       desc = "Reset dapui interface" },
+            { "<leader>c", desc = "Code" },
+            { "<leader>ca", desc = "Code Actions" },
+            { "<leader>cf", "<cmd>:Lspsaga finder<cr>", desc = "Code finder" },
+            { "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>", desc = "Incoming calls" },
+            { "<leader>cp", "<cmd>:Lspsaga peek_type_definition<cr>", desc = "Peak Definition" },
+            { "<leader>cd", desc = "Go to definition" },
+            { "<leader>cr", desc = "Rename" },
 
-                { "<leader>nf",       desc = "Generate anottation" },
+            { "<leader>d", desc = "Debug" },
+            { "<leader>db", "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint" },
+            { "<leader>dc", "<cmd>:lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", desc = "Clear all breakpoints" },
+            { "<leader>ds", "<cmd>:lua require('dap').continue()<cr>", desc = "Debug stop" },
+            { "<leader>dS", "<cmd>:DapTerminate<cr>", desc = "Debug Terminate" },
+            { "<leader>dr", "<cmd>:lua require('dapui').open({reset = true})<cr>", desc = "Reset dapui interface" },
+            { "<leader>de", "<Cmd>lua require('dapui').eval()<CR>", desc = "Debug evaluate" },
 
-                { "<leader>h",        desc = "Harpoon" },
-                { "<leader>ha",       desc = "Harpoon add file" },
-                { "<leader>hq",       desc = "Harpoon quick menu" },
-                { "<leader>hn",       "<cmd>lua require('harpoon.ui').nav_next()<cr>",                                  desc = "Harpoon next file" },
-                { "<leader>hp",       "<cmd>lua require('harpoon.ui').nav_prev()<cr>",                                  desc = "Harpoon previous file" },
-                { "<leader>h1",       "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",                                  desc = "Harpoon file 1" },
-                { "<leader>h2",       "<cmd>lua require('harpoon.ui').nav_file(2)<cr>",                                  desc = "Harpoon file 2" },
-                { "<leader>h3",       "<cmd>lua require('harpoon.ui').nav_file(3)<cr>",                                  desc = "Harpoon file 3" },
-                { "<leader>h4",       "<cmd>lua require('harpoon.ui').nav_file(4)<cr>",                                  desc = "Harpoon file 4" },
-                { "<leader>h5",       "<cmd>lua require('harpoon.ui').nav_file(5)<cr>",                                  desc = "Harpoon file 5" },
-                { "<leader>h6",       "<cmd>lua require('harpoon.ui').nav_file(6)<cr>",                                  desc = "Harpoon file 6" },
-                { "<leader>h7",       "<cmd>lua require('harpoon.ui').nav_file(7)<cr>",                                  desc = "Harpoon file 7" },
-                { "<leader>h8",       "<cmd>lua require('harpoon.ui').nav_file(8)<cr>",                                  desc = "Harpoon file 8" },
-                { "<leader>h9",       "<cmd>lua require('harpoon.ui').nav_file(9)<cr>",                                  desc = "Harpoon file 9" },
-                { "<leader>h0",       "<cmd>lua require('harpoon.ui').nav_file(10)<cr>",                                  desc = "Harpoon file 10" },
+            { "<leader>n", desc = "Neogen" },
+            { "<leader>ng", ":lua require('neogen').generate()<CR>", desc = "Generate annotation" },
 
-                { "<leader>j",        desc = "Java" },
-                { "<leader>jr",       desc = "Java Run" },
-                { "<leader>js",       desc = "Java Stop" },
+            { "<leader>h", desc = "Harpoon" },
+            { "<leader>ha", "<cmd>lua require'harpoon.mark'.add_file()<cr>", desc = "Harpoon add file" },
+            { "<leader>hq", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Harpoon quick menu" },
+            { "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Harpoon next file" },
+            { "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Harpoon previous file" },
+            { "<leader>h1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Harpoon file 1" },
+            { "<leader>h2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Harpoon file 2" },
+            { "<leader>h3", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Harpoon file 3" },
+            { "<leader>h4", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "Harpoon file 4" },
+            { "<leader>h5", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", desc = "Harpoon file 5" },
+            { "<leader>h6", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", desc = "Harpoon file 6" },
+            { "<leader>h7", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", desc = "Harpoon file 7" },
+            { "<leader>h8", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", desc = "Harpoon file 8" },
+            { "<leader>h9", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", desc = "Harpoon file 9" },
+            { "<leader>h0", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", desc = "Harpoon file 10" },
 
-                { "<leader>p",        desc = "Netrw" },
-                { "<leader>pv",       desc = "Netrw" },
+            { "<leader>l", desc = "LSP" },
+            { "<leader>lf", vim.lsp.buf.format, desc = "Format" },
+            { "<leader>lR", "<cmd>LspRestart<cr>", desc = "Restart Server" },
+            { "<leader>lrn", desc = "Rename type" },
 
-                { "<leader>l",        desc = "LSP" },
-                { "<leader>lf",       desc = "Format" },
-                { "<leader>lR",       desc = "Restart Server" },
-                { "<leader>lrn",      desc = "Rename type" },
+            { "<leader>t", desc = "Telescope" },
+            { "<C-f>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescope find files" },
+            { "<C-g>", "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescope live grep" },
 
-                { "<leader>t",        desc = "Trouble/Telescope" },
-                { "<leader>tg",       desc = "Git" },
+            { "<F8>", "<cmd>:lua require('dap').continue()<cr>", desc = "Debug continue/start" },
+            { "<F4>", desc = "Debug toggle breakpoint" },
+            { "<F5>", "<cmd>:lua require('dap').step_into()<cr>zz", desc = "Debug step into" },
+            { "<F6>", "<cmd>:lua require('dap').step_over()<cr>zz", desc = "Debug step over" },
+            { "<f10>", "<cmd>:lua require('dapui').toggle()<cr>", desc = "Toggle DAP UI" },
 
-                { "<F8>",             desc = "Debug continue/start" },
-                { "<F4>",             desc = "Debug toggle breakpoint" },
-                { "<F5>",             desc = "Debug step into" },
-                { "<F6>",             desc = "Debug step over" },
-                -- { "<F8>",             desc = "Debug toggle UI" },
-                -- { "<F6>",             desc = "Compile/run code" },
+            { "<leader>m", desc = "Minty (bom pra front)" },
+            { "<leader>ms", "<cmd>Shades<cr>", desc = "Shades" },
+            { "<leader>mh", "<cmd>Huefy<cr>", desc = "Huefy" },
 
-                { "<leader>db",       "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", desc = "Toggle Breakpoint",   mode = "n" },
-                { "<leader>ac",       "<cmd>CodeCompanionChat<cr>",                                             desc = "Code Companion chat", mode = "n" },
-                { "<leader>C",        desc = "Compiler Open",                                                   mode = "n" },
-                { "<leader>Co",       "<cmd>CompilerOpen<cr>",                                                  desc = "Compiler Open",       mode = "n" },
-                { "<leader>Cs",       "<cmd>CompilerStop<cr>",                                                  desc = "Compiler STOP",       mode = "n" },
-                { "<leader>m",        desc = "Minty (bom pra front)" },
-                { "<leader>ms",       "<cmd>Shades<cr>",                                                        desc = "Shades",              mode = "n" },
-                { "<leader>mh",       "<cmd>Huefy<cr>",                                                         desc = "Huefy",               mode = "n" },
-                { "<leader>de",       "<Cmd>lua require('dapui').eval()<CR>",                                   desc = "Debug evaluate",      mode = "n" },
+            { "<leader>b", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle breakpoints" },
 
-                { "<leader>b",        "<cmd>DapToggleBreakpoint<cr>",                                           desc = "Toggle breakpoints" },
-                -- { "<leader>b",             desc = "Banco de dados" },
-                -- { "<leader>bt",       "<cmd>Dbee<cr>",                                                          desc = "Toggle DBEE",         mode = "n" },
-            }
+            { "<c-t>", "<c-\\><c-n><cmd>:ToggleTerm<cr>a", desc = "Toggle terminal" },
+            { "<c-h>", "<c-w>h", desc = "Left panel" },
+            { "<c-l>", "<c-w>l", desc = "Right panel" },
+            { "<c-k>", "<c-w>k", desc = "Up panel" },
+            { "<c-j>", "<c-w>j", desc = "Down panel" },
+        })
+
+        wk.add({
+            mode = { "v" },
+            { "J", ":m '>+1<CR>gv=gv", desc = "Move line down" },
+            { "K", ":m '<-2<CR>gv=gv", desc = "Move line up" },
+            { '"', "<cmd>:Wrapwordsdoublequotes<cr>", desc = "Wrap with double quotes" },
+            { "'", "<cmd>:Wrapwordssinglequotes<cr>", desc = "Wrap with single quotes" },
+            { "(", "<cmd>:Wrapwordsparentheses<cr>", desc = "Wrap with parentheses" },
+        })
+
+        wk.add({
+            mode = { "t" },
+            { "<c-t>", "<c-\\><c-n><cmd>:ToggleTerm<cr>", desc = "Toggle terminal" },
         })
     end
 }

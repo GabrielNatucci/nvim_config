@@ -15,6 +15,14 @@ return {
         instructions_file = "avante.md",
         -- for example
         provider = "gemini-cli",
+        models = {
+            ["gemini-cli"] = {
+                ["gpt-4o"] = {
+                    provider = "openai",
+                    model = "gpt-4o",
+                },
+            },
+        },
         acp_providers = {
             ["gemini-cli"] = {
                 command = "gemini",
