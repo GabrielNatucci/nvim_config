@@ -10,28 +10,12 @@ return {
     ---@module 'avante'
     ---@type avante.Config
     opts = {
-        -- add any opts here
-        -- this file can contain specific instructions for your project
         instructions_file = "avante.md",
-        -- for example
-        provider = "gemini-cli",
-        models = {
-            ["gemini-cli"] = {
-                ["gpt-4o"] = {
-                    provider = "openai",
-                    model = "gpt-4o",
-                },
-            },
-        },
-        acp_providers = {
-            ["gemini-cli"] = {
-                command = "gemini",
-                args = { "--experimental-acp" },
-                env = {
-                    NODE_NO_WARNINGS = "1",
-                    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY"),
-                },
-            },
+        provider = "gemini",
+        gemini = {
+            model = "gemini-3.1-pro-preview",
+            max_tokens = 10000,
+            temperature = 0,
         },
     },
     dependencies = {
@@ -72,3 +56,4 @@ return {
         },
     },
 }
+

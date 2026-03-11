@@ -40,7 +40,8 @@ return {
             { "<leader>cf", "<cmd>:Lspsaga finder<cr>", desc = "Code finder" },
             { "<leader>ci", "<cmd>:Lspsaga incoming_calls<cr>", desc = "Incoming calls" },
             { "<leader>cp", "<cmd>:Lspsaga peek_type_definition<cr>", desc = "Peak Definition" },
-            { "<leader>cd", desc = "Go to definition" },
+            { "<leader>cd", desc = "Diagnostics" },
+            { "<leader>ch", "<cmd>:Lspsaga hover_doc<cr>", desc = "Rename" },
             { "<leader>cr", desc = "Rename" },
 
             { "<leader>d", desc = "Debug" },
@@ -76,8 +77,11 @@ return {
             { "<leader>lrn", desc = "Rename type" },
 
             { "<leader>t", desc = "Telescope" },
-            { "<C-f>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescope find files" },
-            { "<C-g>", "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescope live grep" },
+            { "<C-f>", "<cmd>lua require('telescope.builtin').find_files({layout_strategy='horizontal',layout_config={width=0.90, height=0.90}})<cr>", desc = "Telescope find files" },
+            { "<C-g>", "<cmd>lua require('telescope.builtin').live_grep({layout_strategy='horizontal',layout_config={width=0.90, height=0.90}})<cr>", desc = "Telescope live grep" },
+            { "<leader>cs", "<cmd>lua require('telescope.builtin').lsp_document_symbols({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescole file symbols" },
+            { "<leader>cS", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescole file symbols" },
+            { "<leader>ti", "<cmd>lua require('telescope.builtin').lsp_implementations({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>", desc = "Telescole implementations" },
 
             { "<F8>", "<cmd>:lua require('dap').continue()<cr>", desc = "Debug continue/start" },
             { "<F4>", desc = "Debug toggle breakpoint" },
@@ -92,10 +96,12 @@ return {
             { "<leader>b", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle breakpoints" },
 
             { "<c-t>", "<c-\\><c-n><cmd>:ToggleTerm<cr>a", desc = "Toggle terminal" },
-            { "<c-h>", "<c-w>h", desc = "Left panel" },
-            { "<c-l>", "<c-w>l", desc = "Right panel" },
-            { "<c-k>", "<c-w>k", desc = "Up panel" },
-            { "<c-j>", "<c-w>j", desc = "Down panel" },
+            { "<c-h>", "<c-w>h", desc = "Ir para janela da esquerda" },
+            { "<c-l>", "<c-w>l", desc = "Ir para janela da direita" },
+            { "<c-k>", "<c-w>k", desc = "Ir para janela da cima" },
+            { "<c-j>", "<c-w>j", desc = "Ir para janela da baixo"},
+            { "<C-Right>", "<cmd>vertical resize -5<CR>", desc = "Aumentar largura da janela para direita" },
+            { "<C-Left>", "<cmd>vertical resize +5<CR>", desc = "Aumentar largura da janela para esquerda" },
         })
 
         wk.add({

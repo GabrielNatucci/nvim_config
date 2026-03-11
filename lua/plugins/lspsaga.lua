@@ -10,7 +10,7 @@ return {
                 -- você pode manter outras configurações aqui se quiser
             },
             breadcrumbs = {
-                enable = false,
+                enable = true,
             },
             border = {
             },
