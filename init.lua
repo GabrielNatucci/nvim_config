@@ -59,6 +59,8 @@ vim.opt.cmdheight = 0
 vim.api.nvim_set_hl(0, "MyDapBreakpointHL", { fg = "#FF0000", bg = nil })  -- define a cor vermelha
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "MyDapBreakpointHL", linehl = "", numhl = "" })
 
+vim.opt.guicursor = vim.opt.guicursor + "a:blinkon0"
+
 
 -- Case insensitive search
 vim.o.ignorecase = true
