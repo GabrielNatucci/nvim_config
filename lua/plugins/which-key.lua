@@ -21,8 +21,8 @@ return {
         wk.add({
             mode = { "n" },
             { "<leader>o",        "<cmd>Oil<cr>",                                                                                                                            desc = "Oil File Explorer" },
-            { "<leader>e",        "<cmd>NvimTreeToggle<cr>",                                                                                                                 desc = "NvimTree File Explorer" },
-            { "<leader>f",        "<cmd>NvimTreeFindFile<cr>",                                                                                                               desc = "Find current file in NvimTree" },
+            { "<leader>e",        "<cmd>lua require('nvim-tree.api').tree.toggle({ path = '<args>', find_file = true, update_root = true, focus = true, })<cr>",             desc = "NvimTree File Explorer" },
+            { "<leader>f",        "<cmd>lua require('nvim-tree.api').tree.find_file({ open = true, update_root = '<bang>', focus = false, })<cr>",                           desc = "Find current file in NvimTree" },
 
             { "<leader>w",        "<cmd>w!<cr>",                                                                                                                             desc = "Save" },
             { "<c-s>",            "<cmd>w!<cr>",                                                                                                                             desc = "Save" },
@@ -36,14 +36,13 @@ return {
             { "<leader>g",        desc = "Git" },
 
             { "<leader>c",        desc = "Code" },
-            { "<leader>ca",       desc = "Code Actions" },
             { "<leader>cf",       "<cmd>:Lspsaga finder<cr>",                                                                                                                desc = "Code finder" },
             { "<leader>ci",       "<cmd>:Lspsaga incoming_calls<cr>",                                                                                                        desc = "Incoming calls" },
             { "<leader>cp",       "<cmd>:Lspsaga peek_type_definition<cr>",                                                                                                  desc = "Peak Definition" },
-            { "<leader>cd",       vim.lsp.buf.definition,                                                                                                                    desc = "Diagnostics" },
+            -- { "<leader>cd",       vim.lsp.buf.definition,                                                                                                                    desc = "Diagnostics" },
             { "<leader>ch",       "<cmd>:Lspsaga hover_doc<cr>",                                                                                                             desc = "Hover" },
             { "<leader>cr",       vim.lsp.buf.rename,                                                                                                                        desc = "Rename" },
-            { "<leader>ca",       vim.lsp.buf.code_action,                                                                                                                   desc = "Code Actions" },
+            { "<leader>ca",       "<cmd>:Lspsaga code_action<cr>",                                                                                                           desc = "Code Actions" },
             { "<leader>cn",       vim.diagnostic.goto_next,                                                                                                                  desc = "Next diagnostic" },
             { "H",                vim.diagnostic.open_float,                                                                                                                 desc = "Hover" },
             { "gd",               vim.lsp.buf.definition,                                                                                                                    desc = "Go to definition" },
@@ -89,7 +88,7 @@ return {
             { "<leader>ti",       "<cmd>lua require('telescope.builtin').lsp_implementations({layout_strategy='horizontal',layout_config={width=0.98, height=0.98}})<cr>",   desc = "Telescole implementations" },
 
             { "<m-r>",            "<cmd>OverseerRun<cr>",                                                                                                                    desc = "Overseer run" },
-            { "<m-t>",            "<cmd>OverseerToggle<cr>",                                                                                                                 desc = "Overseer toggle" },
+            { "<m-p>",            "<cmd>OverseerToggle<cr>",                                                                                                                 desc = "Overseer pannel toggle" },
 
             { "<F8>",             "<cmd>:lua require('dap').continue()<cr>",                                                                                                 desc = "Debug continue/start" },
             { "<F4>",             desc = "Debug toggle breakpoint" },
@@ -110,6 +109,18 @@ return {
             { "<c-j>",            "<c-w>j",                                                                                                                                  desc = "Ir para janela da baixo" },
             { "<C-Right>",        "<cmd>vertical resize -5<CR>",                                                                                                             desc = "Aumentar largura da janela para direita" },
             { "<C-Left>",         "<cmd>vertical resize +5<CR>",                                                                                                             desc = "Aumentar largura da janela para esquerda" },
+            -- dev utils
+            { "<leader>u",        desc = "Development Tools" },
+            { "<leader>ug",       "<cmd>LazyGit<cr>",                                                                                                                        desc = "LazyGit" },
+            { "<leader>ud",       "<cmd>lua require('lazydocker').open()<cr>",                                                                                               desc = "Lazydocker" }
+
+            -- {
+            --     "<leader>ld",
+            --     function()
+            --         require("lazydocker").open()
+            --     end,
+            --     desc = "Open Lazydocker floating window",
+            -- },
         })
 
         wk.add({

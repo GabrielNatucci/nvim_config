@@ -6,6 +6,15 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     config = function()
+        vim.api.nvim_create_autocmd("BufEnter", {
+            callback = function()
+                require("nvim-tree.api").tree.find_file({
+                    open = false,
+                    update_root = false,
+                    focus = false,
+                })
+            end,
+        })
         require("nvim-tree").setup {
             view = {
                 centralize_selection = false,
