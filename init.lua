@@ -50,7 +50,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- Command Height
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 -- DAP signs
 -- vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'red', linehl = '', numhl = '' })
