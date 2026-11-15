@@ -34,15 +34,10 @@ return {
                 "clangd",
                 "cssls",
                 "html",
-                "xmlformatter",
-                "prettier",
-                "prettierd",
-                "codelldb",
                 "jsonls",
                 "emmet_ls",
                 "zls",
             },
-            automatic_installation = false,
             automatic_enable = true
         })
 

@@ -7,6 +7,7 @@ return {
         ensure_installed = {
             "python", "c", "lua", "vim", "vimdoc", "query", "elixir", "heex",
             "javascript", "html", "tsx", "java", "xml", "json",
+            "markdown", "markdown_inline", -- Lspsaga hover documentation.
         },
         auto_install = false,
         highlight = { enable = true },

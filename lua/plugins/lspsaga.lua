@@ -6,8 +6,7 @@ return {
                 enable = false,
             },
             symbol_in_winbar = {
-                enable = false, -- desabilita o winbar de símbolos
-                -- você pode manter outras configurações aqui se quiser
+                enable = false,
             },
             breadcrumbs = {
                 enable = true,
