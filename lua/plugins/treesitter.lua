@@ -1,12 +1,17 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master', -- Compatible with Neovim 0.11.
     lazy = false,
     build = ':TSUpdate',
-
-    require 'nvim-treesitter'.setup {
-        install_dir = vim.fn.stdpath('data') .. '/site'
+    opts = {
+        ensure_installed = {
+            "python", "c", "lua", "vim", "vimdoc", "query", "elixir", "heex",
+            "javascript", "html", "tsx", "java", "xml", "json",
+        },
+        auto_install = false,
+        highlight = { enable = true },
     },
-    require('nvim-treesitter').install({ "python", "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript",
-        "html",
-        "tsx", "java", "xml", "json" }):wait(300000) -- wait max. 5 minutes
+    config = function(_, opts)
+        require('nvim-treesitter.configs').setup(opts)
+    end,
 }
